@@ -1,0 +1,43 @@
+<br/>
+<input type="text" class="form-control" #name placeholder="name">
+<br/>
+<input type="text" class="form-control" #email placeholder="email">
+<br/>
+<input type="text" class="form-control" #github placeholder="github">
+<br/>
+<input type="text" class="form-control" #twitter placeholder="twitter">
+<br/>
+<input type="text" class="form-control" #location placeholder="location">
+<br/>
+<input type="text" class="form-control" #latest_article_published placeholder="latest_article_published">
+<br/>
+<button (click)="Create(name, email, github, twitter, location, latest_article_published)" >Gonder</button>
+
+<br/>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">username</th>
+      <th scope="col">email</th>
+      <th scope="col">github</th>
+      <th scope="col">twitter</th>
+      <th scope="col">location</th>
+      <th scope="col">lates</th>
+      <th scope="col">sil</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <th scope="row">{{user.id}}</th>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.github}}</td>
+      <td>{{user.twitter}}</td>
+      <td>{{user.location}}</td>
+      <td>{{user.latest_article_published}}</td>
+      <td><button class="btn btn-danger" (click)="Remove(user)">sil</button></td>
+    </tr>
+    
+  </tbody>
+</table>
